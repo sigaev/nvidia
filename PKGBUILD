@@ -7,6 +7,8 @@ url="http://www.nvidia.com"
 source=('all.txz::https://s3.amazonaws.com/sigaev/linux/nvidia/x64/all.txz')
 noextract=('all.txz')
 md5sums=('40dd05f87e48a1ea1f34dfff8cc1e27a')
+provides=('libgl' 'libgles' 'libegl')
+conflicts=('libgl' 'libgles' 'libegl' 'libglvnd' 'nvidia-settings' 'nvidia-utils')
 
 package() {
   tar xJf all.txz -C "$pkgdir"
